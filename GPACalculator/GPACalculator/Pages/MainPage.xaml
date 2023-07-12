@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GPACalculator.Pages.MainPage"
+    xmlns:pages="clr-namespace:GPACalculator.Pages"
+       >
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="#76BA99" Padding="0" HeightRequest="200" VerticalOptions="StartAndExpand">
+                <Frame CornerRadius="100"  Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Margin="40">
+                    <Image Source="_gpa.png"  HeightRequest="100"  WidthRequest="100" Aspect="Fill"/>
+                </Frame>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    
+
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="#CED89E" Orientation="Vertical" HeightRequest="200" VerticalOptions="StartAndExpand">
+                <BoxView HeightRequest="1" Color="Black"/>
+                <StackLayout Margin="0,40,0,0">
+                    <Grid ColumnDefinitions="0.2*,0.8*">
+                        <Image Source="about.png"
+                       Margin="5"
+                       HeightRequest="30" />
+                        <Label Grid.Column="1"
+                       Text="About"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+                    </Grid>
+                    <BoxView HeightRequest=".5" Color="Gray"/>
+                    <Grid ColumnDefinitions="0.2*,0.8*">
+                        <Image Source="contactus.png"
+                       Margin="5"
+                       HeightRequest="30" />
+                        <Label Grid.Column="1"
+                       Text="Contact US"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="#ADCF9F" HeightRequest="65" VerticalOptions="StartAndExpand">
+                <BoxView HeightRequest="1" Color="Gray"/>
+                <Grid ColumnDefinitions="0.2*,0.8*" HorizontalOptions="Center">
+                <Image Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="30" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+                </Grid>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Home}" />
+        </Tab>
+        <Tab Title="Demo GPA" Icon="__gpa.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:DemoGPA}"/>
+        </Tab>
+        <Tab Title="Add Semester" Icon="semester.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:AddSemester}"/>
+        </Tab>
+        <Tab Title="My Journey" Icon="education.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:MyGPA}"/>
+        </Tab>
+    </FlyoutItem>
+</Shell>

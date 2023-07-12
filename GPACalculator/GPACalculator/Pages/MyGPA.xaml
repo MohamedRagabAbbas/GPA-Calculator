@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPACalculator.Pages.MyGPA"
+             BackgroundColor="#4C3A51">
+    <ContentPage.Content>
+        <Frame CornerRadius="200" BackgroundColor="#774360">
+            <StackLayout>
+                <Frame CornerRadius="100" HeightRequest="400" BackgroundColor="#B25068">
+                    <StackLayout>
+                        <ListView x:Name="listview">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal"  >
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label Text="Credit Hours : "  TextColor="#0F0E0E"/>
+                                                    <Label Text="{Binding Hours}" TextColor="#0F0E0E"/>
+                                                </StackLayout>
+                                                <Label Text="    |    " VerticalOptions="Center" TextColor="#0F0E0E"/>
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label Text="Letter Grade : " TextColor="#0F0E0E"/>
+                                                    <Label Text="{Binding Grade}" TextColor="#0F0E0E"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem Text="Delete" x:Name="Delete" Clicked="Delete_Clicked" CommandParameter="{Binding .}"/>
+                                        </ViewCell.ContextActions>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+                <Frame HeightRequest="35" WidthRequest="250" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="50" BackgroundColor="#51557E" Padding="0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Credit hours" VerticalOptions="Center" TextColor="#0F0E0E" />
+                        <Label x:Name="lable1" WidthRequest="25" VerticalOptions="Center" TextColor="#0F0E0E"/>
+                        <Label Text="|  " VerticalOptions="Center" TextColor="#0F0E0E"/>
+                        <Label Text="Letter Grade" VerticalOptions="Center" TextColor="#0F0E0E"/>
+                        <Label x:Name="lable2" WidthRequest="40" VerticalOptions="Center" TextColor="#0F0E0E"/>
+                    </StackLayout>
+                </Frame>
+                
+            </StackLayout>
+
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

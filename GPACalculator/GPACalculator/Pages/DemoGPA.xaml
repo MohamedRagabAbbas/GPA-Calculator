@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPACalculator.Pages.DemoGPA"
+             BackgroundColor="#FBF46D">   
+    <ContentPage.Content>
+        <Frame CornerRadius="200" BackgroundColor="#B4FE98">
+            <StackLayout>
+                <Frame CornerRadius="100" HeightRequest="70" WidthRequest="340" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="#77E4D4" Margin="0,50,0,0" Padding="0">
+                    <StackLayout VerticalOptions="Center">
+                        <StackLayout Orientation="Horizontal" Margin="5,0,0,0" >
+                            <Label Text="Letter Grade" Margin="10,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="#0F0E0E"/>
+                            <Picker x:Name="picker1" VerticalOptions="Center" VerticalTextAlignment="Center" WidthRequest="30" TextColor="#0F0E0E"/>
+                            <Label Text="Credit Hours" Margin="30,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="#0F0E0E"/>
+                            <Picker x:Name="picker2" VerticalOptions="Center" VerticalTextAlignment="Center" WidthRequest="30" TextColor="#0F0E0E"/>
+                            <ImageButton Source="add.png" Clicked="Button_Clicked" BackgroundColor="#77E4D4" WidthRequest="40" HeightRequest="40"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="100" HeightRequest="285" BackgroundColor="#ADCF9F">
+                    <StackLayout>
+                        <ListView x:Name="listview">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal"  >
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label Text="Credit Hours : "  TextColor="#0F0E0E"/>
+                                                    <Label Text="{Binding Hours}" TextColor="#0F0E0E"/>
+                                                </StackLayout>
+                                                <Label Text="    |    " VerticalOptions="Center" TextColor="#0F0E0E"/>
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label Text="Letter Grade : " TextColor="#0F0E0E"/>
+                                                    <Label Text="{Binding Grade}" TextColor="#0F0E0E"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem Text="Delete" x:Name="Delete" Clicked="Delete_Clicked" CommandParameter="{Binding .}"/>
+                                        </ViewCell.ContextActions>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+                <Frame HeightRequest="35" WidthRequest="250" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="50" BackgroundColor="#FFDCAE" Padding="0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Credit hours" VerticalOptions="Center" TextColor="#0F0E0E" />
+                        <Label x:Name="lable1" WidthRequest="25" VerticalOptions="Center" TextColor="#0F0E0E"/>
+                        <Label Text="|  " VerticalOptions="Center" TextColor="#0F0E0E"/>
+                        <Label Text="Letter Grade" VerticalOptions="Center" TextColor="#0F0E0E"/>
+                        <Label x:Name="lable2" WidthRequest="40" VerticalOptions="Center" TextColor="#0F0E0E"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </Frame>
+        
+    </ContentPage.Content>
+</ContentPage>

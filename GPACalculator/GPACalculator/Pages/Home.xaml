@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPACalculator.Pages.Home"
+             BackgroundColor="#B4FF9F">
+    <ContentPage.Content>
+        <StackLayout  BackgroundColor="#B4FF9F" Padding="20">
+            <Label Text="GPA Calculator" FontSize="50"  HorizontalTextAlignment="Center" Margin="0,15,0,10" FontFamily="font1"/>
+            <Frame  CornerRadius="100" BackgroundColor="#F9FFA4" HeightRequest="450" VerticalOptions="Center" WidthRequest="300" Margin="10" Padding="10">
+                <StackLayout>
+                    <Frame CornerRadius="75" BackgroundColor="#F9FFA4" WidthRequest="150" HeightRequest="150" Padding="0" HorizontalOptions="Center">
+                        <Image Source="student.jpg" Aspect="Fill" />
+                    </Frame>
+                    <BoxView BackgroundColor="#B4FF9F" HeightRequest=".5" WidthRequest="200" HorizontalOptions="Center" Margin="0,5,0,0"/>
+                    <Frame  CornerRadius="100" BackgroundColor="#FFD59E" HeightRequest="45" WidthRequest="230" HorizontalOptions="Center" Padding="0" Margin="0,10,0,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="gpa.png" Margin="10,0,0,0"/>
+                            <Button Text="Calculate Your GPA" TextTransform="None" BackgroundColor="#FFD59E" Margin="0" TextColor="#6A5495" FontFamily="font2" Clicked="Button_Clicked"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  CornerRadius="100" BackgroundColor="#FFD59E" HeightRequest="45" WidthRequest="230" HorizontalOptions="Center" Padding="0" Margin="0,10,0,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="_new.png" Margin="10,0,0,0"/>
+                            <Button Text="Add New Semester" BackgroundColor="#FFD59E" TextTransform="None" Margin="0" TextColor="#6A5495" FontFamily="font2" Clicked="Button_Clicked_1"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  CornerRadius="100" BackgroundColor="#FFD59E" HeightRequest="45" WidthRequest="230" HorizontalOptions="Center" Padding="0" Margin="0,10,0,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="_semester.png" Margin="10,0,0,0"/>
+                            <Button Text=" Ended Semesters" BackgroundColor="#FFD59E"  TextTransform="None" TextColor="#6A5495" FontFamily="font2" Clicked="Button_Clicked_2"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
