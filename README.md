@@ -44,11 +44,13 @@ https://github.com/MohamedRagabAbbas/GPA-Calculator.git
 - Create and manage semesters with start and end dates.
 - Store GPA records and semester information in a local database.
 
+<div>
 <img src="ScreenShots/Screenshot_1.jpeg" alt="Alt text" width="260" height="500" />
 <img src="ScreenShots/Screenshot_4.jpeg" alt="Alt text" width="260" height="500" />
 <img src="ScreenShots/Screenshot_3.jpeg" alt="Alt text" width="260" height="500" />
 <img src="ScreenShots/Screenshot_2.jpeg" alt="Alt text" width="260" height="500" />
 <img src="ScreenShots/Screenshot_5.jpeg" alt="Alt text" width="260" height="500" />
+</div>
 
 ## Contributing
 
